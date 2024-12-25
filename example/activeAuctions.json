@@ -1,0 +1,71 @@
+{
+  "success": true,
+  "active_auctions": [
+    {
+      "auction_ends_at": 1734841604,
+      "auction_highest_bid": 28,
+      "auction_highest_bidder": 8095152,
+      "auction_number_of_bids": 2,
+      "blue_percentage": null,
+      "fade_percentage": null,
+      "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFU2nfGaJG0btN2wwYHfxa-hY-uFxj4Dv50nj7uXpI7w3AewrhBpMWH6d9CLMlhpEbAe-Zk",
+      "is_commodity": true,
+      "market_name": "Fracture Case",
+      "market_value": 27,
+      "name_color": "D2D2D2",
+      "preview_id": null,
+      "price_is_unreliable": false,
+      "stickers": [],
+      "suggested_price": 30,
+      "wear": null,
+      "published_at": "2024-12-22T04:24:31.487248Z",
+      "id": 278628821,
+      "depositor_stats": {
+        "delivery_rate_recent": 0.25,
+        "delivery_rate_long": null,
+        "delivery_time_minutes_recent": null,
+        "delivery_time_minutes_long": null,
+        "steam_level_min_range": null,
+        "steam_level_max_range": null,
+        "user_has_trade_notifications_enabled": false,
+        "user_online_status": 1
+      },
+      "above_recommended_price": "-2.43",
+      "purchase_price": 29,
+      "wear_name": null
+    },
+    {
+      "auction_ends_at": 1734841681,
+      "auction_highest_bid": 26,
+      "auction_highest_bidder": 8095152,
+      "auction_number_of_bids": 1,
+      "blue_percentage": null,
+      "fade_percentage": null,
+      "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFU4naLOJzgUuYqyzIaIxa6jMOLXxGkHvcMjibmU99Sg3Qaw-hA_ZWrzLISLMlhpgJJUhGE",
+      "is_commodity": true,
+      "market_name": "Snakebite Case",
+      "market_value": 26,
+      "name_color": "D2D2D2",
+      "preview_id": null,
+      "price_is_unreliable": false,
+      "stickers": [],
+      "suggested_price": 28,
+      "wear": null,
+      "published_at": "2024-12-22T04:25:21.108731Z",
+      "id": 278629053,
+      "depositor_stats": {
+        "delivery_rate_recent": 1,
+        "delivery_rate_long": null,
+        "delivery_time_minutes_recent": 31,
+        "delivery_time_minutes_long": null,
+        "steam_level_min_range": null,
+        "steam_level_max_range": null,
+        "user_has_trade_notifications_enabled": false,
+        "user_online_status": 1
+      },
+      "above_recommended_price": "-2.15",
+      "purchase_price": 27,
+      "wear_name": null
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "success": true,
+  "data": {
+    "deposits": [],
+    "withdrawals": [
+      {
+        "id": 25833695,
+        "total_value": 28,
+        "item_id": 278628821,
+        "item": {
+          "blue_percentage": null,
+          "fade_percentage": null,
+          "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFU2nfGaJG0btN2wwYHfxa-hY-uFxj4Dv50nj7uXpI7w3AewrhBpMWH6d9CLMlhpEbAe-Zk",
+          "id": 278628821,
+          "is_commodity": true,
+          "market_name": "Fracture Case",
+          "market_value": 0.27,
+          "name_color": "D2D2D2",
+          "preview_id": null,
+          "price_is_unreliable": false,
+          "stickers": [],
+          "suggested_price": 0.3,
+          "wear": null
+        },
+        "status": 3,
+        "status_message": "Sending",
+        "tradeoffer_id": 278628821,
+        "metadata": {
+          "item_validation": {
+            "numWrongItemDetections": 0,
+            "validItemDetected": false
+          },
+          "expires_at": 1734843406,
+          "auction_highest_bid": 28,
+          "auction_ends_at": 1734841604,
+          "auction_highest_bidder": 8095152,
+          "auction_number_of_bids": 2
+        },
+        "created_at": "2024-12-22 04:26:46",
+        "updated_at": "2024-12-22 04:26:48"
+      },
+      {
+        "id": 25833698,
+        "total_value": 26,
+        "item_id": 278629053,
+        "item": {
+          "blue_percentage": null,
+          "fade_percentage": null,
+          "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXU5A1PIYQNqhpOSV-fRPasw8rsUFJ5KBFZv668FFU4naLOJzgUuYqyzIaIxa6jMOLXxGkHvcMjibmU99Sg3Qaw-hA_ZWrzLISLMlhpgJJUhGE",
+          "id": 278629053,
+          "is_commodity": true,
+          "market_name": "Snakebite Case",
+          "market_value": 0.26,
+          "name_color": "D2D2D2",
+          "preview_id": null,
+          "price_is_unreliable": false,
+          "stickers": [],
+          "suggested_price": 0.28,
+          "wear": null
+        },
+        "status": 3,
+        "status_message": "Sending",
+        "tradeoffer_id": 278629053,
+        "metadata": {
+          "item_validation": {
+            "numWrongItemDetections": 0,
+            "validItemDetected": false
+          },
+          "expires_at": 1734843483,
+          "auction_highest_bid": 26,
+          "auction_ends_at": 1734841681,
+          "auction_highest_bidder": 8095152,
+          "auction_number_of_bids": 1
+        },
+        "created_at": "2024-12-22 04:28:03",
+        "updated_at": "2024-12-22 04:28:06"
+      }
+    ]
+  }
+}

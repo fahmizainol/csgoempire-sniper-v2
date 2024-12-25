@@ -1,0 +1,133 @@
+{
+  "success": true,
+  "data": {
+    "deposits": [
+      {
+        "id": 278621706,
+        "total_value": 38,
+        "item_id": 4185624447,
+        "item": {
+          "asset_id": 15727415804,
+          "blue_percentage": null,
+          "created_at": "2024-02-07 00:40:51",
+          "fade_percentage": null,
+          "full_position": 133,
+          "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXQ9QVcJY8gulRWTVjfUO2u0p2DAgQ7Ng1QiaK8O154nfGfIW1B6ITkxtPYlfT3N-LVkzkD65AljrCZoduk0Qyy-0o6MWjyLY-LMlhpYry1jeE",
+          "id": 4185624447,
+          "is_commodity": true,
+          "market_name": "Sticker | Xyp9x | Katowice 2019",
+          "market_value": 0.38,
+          "name_color": "D2D2D2",
+          "position": null,
+          "preview_id": null,
+          "price_is_unreliable": false,
+          "stickers": [],
+          "suggested_price": 0.47,
+          "tradable": true,
+          "trade_exists": false,
+          "tradelock": false,
+          "updated_at": "2024-12-22 03:20:56",
+          "wear": null
+        },
+        "status": 2,
+        "status_message": "Processing",
+        "tradeoffer_id": 0,
+        "created_at": "2024-12-22 03:47:54",
+        "updated_at": "2024-12-22 03:47:54",
+        "metadata": {
+          "item_inspected": false,
+          "auction_ends_at": 1734839454,
+          "auction_number_of_bids": 0
+        },
+        "suggested_price": 47
+      },
+      {
+        "id": 278621888,
+        "total_value": 31,
+        "item_id": 4185624353,
+        "item": {
+          "app_id": 730,
+          "context_id": 2,
+          "type": "users",
+          "asset_id": 32600047890,
+          "blue_percentage": null,
+          "created_at": "2024-02-07 00:35:55",
+          "fade_percentage": null,
+          "full_position": 39,
+          "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopuP1FAR17OORIQJN6tqhm5KHk8j4OrzZgiVXuJBwj-qRotql2gTg_kFkZmmlLISTew42YwqFqFC4wL28gcXo75XI1zI97QvdlRZm",
+          "id": 4185624353,
+          "is_commodity": false,
+          "market_name": "P90 | Off World (Minimal Wear)",
+          "market_value": 0.31,
+          "name_color": "D2D2D2",
+          "position": 2,
+          "preview_id": "f791fa7f40c8",
+          "price_is_unreliable": false,
+          "stickers": [],
+          "suggested_price": 0.38,
+          "tradable": true,
+          "trade_exists": false,
+          "tradelock": false,
+          "updated_at": "2024-12-22 03:35:11",
+          "wear": 0.141
+        },
+        "status": 2,
+        "status_message": "Processing",
+        "tradeoffer_id": 0,
+        "created_at": "2024-12-22 03:48:08",
+        "updated_at": "2024-12-22 03:48:08",
+        "metadata": {
+          "item_inspected": true,
+          "item_position_in_inventory": 2,
+          "auction_ends_at": 1734839468,
+          "auction_number_of_bids": 0
+        },
+        "suggested_price": 38
+      },
+      {
+        "id": 278621897,
+        "total_value": 31,
+        "item_id": 4185624354,
+        "item": {
+          "app_id": 730,
+          "context_id": 2,
+          "type": "users",
+          "asset_id": 32600047634,
+          "blue_percentage": null,
+          "created_at": "2024-02-07 00:35:55",
+          "fade_percentage": null,
+          "full_position": 40,
+          "icon_url": "-9a81dlWLwJ2UUGcVs_nsVtzdOEdtWwKGZZLQHTxDZ7I56KU0Zwwo4NUX4oFJZEHLbXH5ApeO4YmlhxYQknCRvCo04DEVlxkKgpopuP1FAR17OORIQJN6tqhm5KHk8j4OrzZgiVXuJBwj-qRotql2gTg_kFkZmmlLISTew42YwqFqFC4wL28gcXo75XI1zI97QvdlRZm",
+          "id": 4185624354,
+          "is_commodity": false,
+          "market_name": "P90 | Off World (Minimal Wear)",
+          "market_value": 0.31,
+          "name_color": "D2D2D2",
+          "position": 3,
+          "preview_id": "fb60cb350528",
+          "price_is_unreliable": false,
+          "stickers": [],
+          "suggested_price": 0.38,
+          "tradable": true,
+          "trade_exists": false,
+          "tradelock": false,
+          "updated_at": "2024-12-22 03:35:11",
+          "wear": 0.104
+        },
+        "status": 2,
+        "status_message": "Processing",
+        "tradeoffer_id": 0,
+        "created_at": "2024-12-22 03:48:08",
+        "updated_at": "2024-12-22 03:48:09",
+        "metadata": {
+          "item_inspected": true,
+          "item_position_in_inventory": 3,
+          "auction_ends_at": 1734839468,
+          "auction_number_of_bids": 0
+        },
+        "suggested_price": 38
+      }
+    ],
+    "withdrawals": []
+  }
+}

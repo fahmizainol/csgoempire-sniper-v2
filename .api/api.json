@@ -1,0 +1,11 @@
+{
+  "version": "1.0",
+  "apis": [
+    {
+      "identifier": "csgoempire",
+      "source": "@csgoempire/v1.0#14lizw35m3es2ct7",
+      "integrity": "sha512-9x5YH13BhAyAu2HhhJx4uHCNdau+dPkOLOZMe7FBTOaB/5LJY9ed0ChwfMqo2+NGdce0wogCSVp3cFWsguRBDA==",
+      "installerVersion": "6.1.2"
+    }
+  ]
+}
