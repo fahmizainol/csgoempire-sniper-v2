@@ -14,12 +14,22 @@ import {
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { User, Send } from "lucide-react";
+import { User, Send, Filter } from "lucide-react";
 import { useState } from "react";
 
 export function CustomSidebar() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+
+  /*
+  FOR Sending to backend
+  - Price range
+  - Rec price above/below
+  - Filter by skins list (json or sth)
+  - Auto bid/buy 
+  - Check balance for empire
+  - 
+  */
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -36,11 +46,10 @@ export function CustomSidebar() {
           <SidebarMenuItem>
             <SidebarMenuButton size="lg">
               <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
-                <User className="size-4" />
+                <Filter className="size-4" />
               </div>
               <div className="flex flex-col gap-0.5 leading-none">
-                <span className="font-semibold">User Profile</span>
-                <span className="">Edit your details</span>
+                <span className="font-semibold">Filters</span>
               </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
@@ -48,7 +57,6 @@ export function CustomSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Contact Information</SidebarGroupLabel>
           <SidebarGroupContent>
             <form onSubmit={handleSubmit} className="flex flex-col gap-4 p-2">
               <div className="grid gap-2">

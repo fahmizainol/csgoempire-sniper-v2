@@ -1,17 +1,17 @@
 import { useState, useMemo, useEffect } from "react";
-import ItemCard from "./components/ItemCard";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Button } from "./components/ui/button";
-import { useSkinsStore } from "./stores/useSkinsStores";
-import type { AuctionItemNew } from "./types";
-import AuctionItemCard from "./components/AuctionItemCard";
+import { useSkinsStore } from "../stores/useSkinsStores";
+import type { AuctionItemNew } from "../types";
+import AuctionItemCard from "@/components/AuctionItemCard";
+import ItemCard from "@/components/ItemCard";
+import { Button } from "@/components/ui/button";
 
-function App() {
+function HomeView() {
   const skins = useSkinsStore((s) => s.skins);
   const fetchSkins = useSkinsStore((s) => s.fetchSkins);
   const sortBy = useSkinsStore((s) => s.sortBy);
@@ -71,7 +71,7 @@ function App() {
             </DropdownMenu>
           </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {sortedSkins.map((v) =>
             v.auction_ends_at ? (
               <AuctionItemCard item={v} key={v.id} />
@@ -85,4 +85,4 @@ function App() {
   );
 }
 
-export default App;
+export default HomeView;
