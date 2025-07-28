@@ -10,12 +10,17 @@ import type { AuctionItemNew } from "../types";
 import AuctionItemCard from "@/components/AuctionItemCard";
 import ItemCard from "@/components/ItemCard";
 import { Button } from "@/components/ui/button";
+import { Grid } from "lucide-react";
+import SkinsListGrid from "@/components/SkinsListGrid";
+import SkinsListTable from "@/components/SkinsListTable";
 
 function HomeView() {
   const skins = useSkinsStore((s) => s.skins);
   const fetchSkins = useSkinsStore((s) => s.fetchSkins);
   const sortBy = useSkinsStore((s) => s.sortBy);
   const setSortBy = useSkinsStore((s) => s.setSortBy);
+
+  const [view, setView] = useState("table");
 
   const sortedSkins = skins.sort((a, b) => {
     const aValue = a[sortBy as keyof typeof a];
@@ -31,7 +36,24 @@ function HomeView() {
     return a.auction_ends_at;
   });
 
-  function onAuctionItemsClick() {}
+  function onViewButtonClick() {
+    if (view == "table") {
+      setView("grid");
+      return;
+    }
+    setView("table");
+  }
+
+  function renderSkinsView() {
+    switch (view) {
+      case "grid":
+        return SkinsListGrid(sortedSkins);
+      case "table":
+        return SkinsListTable(sortedSkins);
+      default:
+        return <div></div>;
+    }
+  }
 
   useEffect(() => {
     fetchSkins();
@@ -53,6 +75,11 @@ function HomeView() {
             <Button variant="default">All items</Button>
           </div>
           <div>
+            <Button onClick={onViewButtonClick} className="mx-2 justify-end">
+              <Grid></Grid>
+            </Button>
+          </div>
+          <div>
             <DropdownMenu>
               <DropdownMenuTrigger>
                 <Button>Sort by</Button>
@@ -71,15 +98,7 @@ function HomeView() {
             </DropdownMenu>
           </div>
         </div>
-        <div className="pt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-          {sortedSkins.map((v) =>
-            v.auction_ends_at ? (
-              <AuctionItemCard item={v} key={v.id} />
-            ) : (
-              <ItemCard item={v} key={v.id} />
-            )
-          )}
-        </div>
+        <div>{renderSkinsView()}</div>
       </div>
     </>
   );

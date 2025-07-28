@@ -11,8 +11,6 @@ import {
   BreadcrumbPage,
 } from "@/components/ui/breadcrumb";
 import { Outlet } from "react-router";
-import { Button } from "@/components/ui/button";
-import { Grid } from "lucide-react";
 
 export default function CustomLayout() {
   const defaultOpen = true;
@@ -30,9 +28,6 @@ export default function CustomLayout() {
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
-          <Button className="justify-end">
-            <Grid></Grid>
-          </Button>
         </header>
         <div className="flex flex-1 flex-col gap-4 ">
           <Outlet />
