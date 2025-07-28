@@ -120,10 +120,8 @@ async function startSocketConnection() {
 
             if (bargainItems.length === 0) return
 
-            // Add new bargains to shared state
             biddingItems = [...biddingItems, ...bargainItems]
 
-            // Notify front-end clients
             ioServer.emit('new_bidding_items', biddingItems)
 
             // Optional: place bids
@@ -136,9 +134,8 @@ async function startSocketConnection() {
         'auction_update',
         /** @param {AuctionItemUpdate[]} data */
         data => {
+          if (biddingItems.length === 0) return
           biddingItemsMutex.runExclusive(() => {
-            if (biddingItems.length === 0) return
-
             const filterData = data.filter(
               d => d.above_recommended_price < REC_PRICE_UPDATE,
             )
@@ -149,7 +146,6 @@ async function startSocketConnection() {
 
             if (updatedAuctionMap.size === 0) return
 
-            // Safely update the fields
             biddingItems = biddingItems.map(bid => {
               if (!updatedAuctionMap.has(bid.id)) return bid
               return {
@@ -160,7 +156,6 @@ async function startSocketConnection() {
 
             console.log(biddingItems)
 
-            // Notify clients
             ioServer.emit('new_bidding_items', biddingItems)
 
             // placeBidOnUpdateItems(...) if needed

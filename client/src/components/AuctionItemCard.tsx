@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 import type { AuctionItemNew } from "@/types";
 import { convertToUsd, formatTimestamp } from "@/utils";
 
-export default function ItemCard({ item }: { item: AuctionItemNew }) {
+export default function AuctionItemCard({ item }: { item: AuctionItemNew }) {
   return (
     <Card className="shadow-2xl rounded-2xl p-4">
       <CardContent className="flex flex-col items-center space-y-4">
@@ -28,6 +28,10 @@ export default function ItemCard({ item }: { item: AuctionItemNew }) {
         </Badge>
 
         <div className="flex flex-col items-center space-y-2">
+          <Badge variant={"destructive"}>
+            Ends at: {formatTimestamp(item.auction_ends_at)}
+          </Badge>
+
           <Badge
             className={cn(
               "text-sm px-2 py-1 rounded-md",
@@ -42,9 +46,15 @@ export default function ItemCard({ item }: { item: AuctionItemNew }) {
           </Badge>
 
           <div className="text-muted-foreground text-sm">
-            Purchase Price:{" "}
+            Current bid:{" "}
             <span className="text-foreground font-medium">
               ${convertToUsd(item.purchase_price / 100).toFixed(2)}
+            </span>
+          </div>
+          <div className="text-muted-foreground text-sm">
+            Number of bids:{" "}
+            <span className="text-foreground font-medium">
+              {item.auction_number_of_bids}
             </span>
           </div>
         </div>

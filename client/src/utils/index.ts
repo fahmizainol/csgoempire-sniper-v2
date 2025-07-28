@@ -11,3 +11,8 @@ export function formatTimestamp(unixSeconds: string | null) {
     day: "numeric",
   }); // Local timezone by default
 }
+
+export function convertToUsd(empireCoin: number | null) {
+  if (!empireCoin) return 0;
+  return empireCoin * 0.614;
+}
