@@ -1,39 +1,41 @@
 /** @typedef {import('./types').AuctionItemNew} AuctionItemNew */
 /** @typedef {import('./types').AuctionItemUpdate} AuctionItemUpdate */
 
-import axios from "axios";
+import axios from 'axios'
 
-const domain = "csgoempire.com";
-axios.defaults.headers.common["Authorization"] = `Bearer ${csgoempireApiKey}`;
+const domain = 'csgoempire.com'
+const csgoempireApiKey = 'c16911a83495484949194e5e5200ab04'
+
+axios.defaults.headers.common['Authorization'] = `Bearer ${csgoempireApiKey}`
 
 export function getNextOffer(auctionHighestBid, auctionBidsCount) {
-  if (!auctionBidsCount) return auctionHighestBid;
-  let n = Math.round(auctionHighestBid * 0.01);
-  return n < 1 && (n = 1), auctionHighestBid + n;
+  if (!auctionBidsCount) return auctionHighestBid
+  let n = Math.round(auctionHighestBid * 0.01)
+  return n < 1 && (n = 1), auctionHighestBid + n
 }
 
 export function placeBidOnNewItems(biddingItems) {
-  const requests = biddingItems.map((item) => {
+  const requests = biddingItems.map(item => {
     return axios.post(
       `https://${domain}/api/v2/trading/deposit/${item.id}/bid`,
       {
         bid_value: item.purchase_price,
-      }
-    );
-  });
+      },
+    )
+  })
 
-  Promise.allSettled(requests).then((results) => {
-    results.forEach((result) => {
-      if (result.status === "fulfilled") {
-        const res = result.value.data;
+  Promise.allSettled(requests).then(results => {
+    results.forEach(result => {
+      if (result.status === 'fulfilled') {
+        const res = result.value.data
         if (res.success) {
-          console.log(`a_u: Updated bid on ${res.auction_data.id}`);
+          console.log(`a_u: Updated bid on ${res.auction_data.id}`)
         }
       } else {
-        console.error("a_u: Error:", result.reason.response.data);
+        console.error('a_u: Error:', result.reason.response.data)
       }
-    });
-  });
+    })
+  })
 
   // NOTE: the error DOES NOT contain auction data
   // Error: {
@@ -45,41 +47,41 @@ export function placeBidOnNewItems(biddingItems) {
 }
 
 export function placeBidOnUpdateItems(matchedBiddingItems) {
-  const requests = matchedBiddingItems.map((item) => {
+  const requests = matchedBiddingItems.map(item => {
     return axios.post(
       `https://${domain}/api/v2/trading/deposit/${item.id}/bid`,
       {
         bid_value: getNextOffer(
           item.auction_highest_bid,
-          item.auction_number_of_bids
+          item.auction_number_of_bids,
         ),
-      }
-    );
-  });
+      },
+    )
+  })
 
-  Promise.allSettled(requests).then((results) => {
-    results.forEach((result) => {
-      if (result.status === "fulfilled") {
-        const res = result.value.data;
+  Promise.allSettled(requests).then(results => {
+    results.forEach(result => {
+      if (result.status === 'fulfilled') {
+        const res = result.value.data
         if (res.success) {
-          console.log(`a_u: Updated bid on ${res.auction_data.id}`);
+          console.log(`a_u: Updated bid on ${res.auction_data.id}`)
         }
       } else {
-        console.error("a_u: Error:", result.reason.response.data);
+        console.error('a_u: Error:', result.reason.response.data)
       }
-    });
-  });
+    })
+  })
 }
 
 export async function refreshUserData(userData, userDataRefreshedAt) {
   if (userDataRefreshedAt && userDataRefreshedAt > Date.now() - 15 * 1000) {
-    return;
+    return
   }
 
   try {
     userData = (await axios.get(`https://${domain}/api/v2/metadata/socket`))
-      .data;
-    userDataRefreshedAt = Date.now();
+      .data
+    userDataRefreshedAt = Date.now()
 
     // let test = (await axios.get(`https://${domain}/api/v2/user/security/token`))
     //   .data;
@@ -88,9 +90,9 @@ export async function refreshUserData(userData, userDataRefreshedAt) {
     return {
       userData: userData,
       userDataRefreshedAt: userDataRefreshedAt,
-    };
+    }
   } catch (error) {
-    console.log(`Failed to refresh user data: ${error.message}`);
+    console.log(`Failed to refresh user data: ${error.message}`)
   }
 }
 
@@ -99,20 +101,20 @@ export async function refreshUserData(userData, userDataRefreshedAt) {
  * @param {AuctionItemNew[]} biddingItems - Array of auction items to check
  */
 export async function checkBiddingItems(biddingItems) {
-  const requests = biddingItems.map((item) => {
-    return axios.get(`https://csgoempire.com/api/v2/trading/item/${item.id}`);
-  });
+  const requests = biddingItems.map(item => {
+    return axios.get(`https://csgoempire.com/api/v2/trading/item/${item.id}`)
+  })
 
-  Promise.allSettled(requests).then((results) => {
-    results.forEach((result) => {
-      if (result.status === "fulfilled") {
-        const res = result.value.data;
+  Promise.allSettled(requests).then(results => {
+    results.forEach(result => {
+      if (result.status === 'fulfilled') {
+        const res = result.value.data
         if (res.success) {
-          console.log(`checkBiddingItem: Updated bid on ${res}`);
+          console.log(`checkBiddingItem: Updated bid on ${res}`)
         }
       } else {
-        console.error("checkBiddingItem: ", result.reason);
+        console.error('checkBiddingItem: ', result.reason)
       }
-    });
-  });
+    })
+  })
 }

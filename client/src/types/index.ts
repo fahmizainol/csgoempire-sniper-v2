@@ -48,9 +48,9 @@ export type AuctionItemUpdate = {
   id: string;
   above_recommended_price: number;
   auction_highest_bid: number;
-  auction_highest_bidder: number;
+  auction_highest_bidder: string;
   auction_number_of_bids: number;
-  auction_ends_at: number; // Since it's a timestamp, we can keep it as a number
+  auction_ends_at: string;
 };
 
 export type AuctionItemNewResponse = {
