@@ -36,7 +36,7 @@ export type AuctionItemNew = {
   suggested_price: number;
   wear: number;
   published_at: string;
-  id: string;
+  id: number;
   depositor_stats: DepositorStats;
   above_recommended_price: number;
   purchase_price: number;

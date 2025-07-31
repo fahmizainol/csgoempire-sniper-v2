@@ -1,6 +1,7 @@
 import type { AuctionItemNew } from "@/types";
 import { create } from "zustand";
 import { io } from "socket.io-client";
+import auctionData from "@/data/auction_item.json";
 
 // const useSkinsStore = create<{
 //   skins: AuctionItemNew[];
@@ -12,16 +13,17 @@ import { io } from "socket.io-client";
 interface SkinsStore {
   skins: AuctionItemNew[];
   isLoading: boolean;
-  fetchSkins: () => {};
+  fetchSkins: () => Promise<void>;
   search: string;
   sortBy: string;
   setSortBy: (sortBy: string) => void;
   filterBy: string;
   setFilterBy: (sortBy: string) => void;
+  setSearch: (query: string) => void;
 }
 
 export const useSkinsStore = create<SkinsStore>((set) => ({
-  skins: [],
+  skins: auctionData as AuctionItemNew[],
   isLoading: false,
   search: "",
   sortBy: "",
